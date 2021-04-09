@@ -3,11 +3,11 @@ import axios from "axios";
 const url = "https://covid19.mathdro.id/api";
 
 export const fetchData = async (country) => {
-  //   let dynamicUrl = url;
+  let dynamicUrl = url;
 
-  //   if (country) {
-  //     dynamicUrl = `${url}/countries/${country}`;
-  //   }
+  if (country) {
+    dynamicUrl = `${url}/countries/${country}`;
+  }
 
   try {
     const {
