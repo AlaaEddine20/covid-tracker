@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Styles.module.scss";
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
   return (
     <div className={styles.cards_container}>
-      <div>
-        <h1>Confirmed</h1>
-        {confirmed.value ? (
+      <div className={styles.confirmed_card}>
+        <h2>Confirmed</h2>
+        {confirmed ? (
           <p>{confirmed.value.toLocaleString("en")}</p>
         ) : (
           <p>Loading..."</p>
         )}
       </div>
-      <div>
-        <h1>Recovered</h1>
-        {recovered.value ? (
+      <div className={styles.recovered_card}>
+        <h2>Recovered</h2>
+        {recovered ? (
           <p>{recovered.value.toLocaleString("en")}</p>
         ) : (
           <p>Loading..."</p>
         )}
       </div>
-      <div>
-        <h1>Deaths</h1>
-        {deaths.value ? (
+      <div className={styles.deaths_card}>
+        <h2>Deaths</h2>
+        {deaths ? (
           <p>{deaths.value.toLocaleString("en")}</p>
         ) : (
           <p>Loading..."</p>

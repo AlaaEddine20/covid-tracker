@@ -4,7 +4,7 @@ import styles from "./Styles.module.scss";
 const Charts = () => {
   return (
     <div className={styles.charts_container}>
-      <h1>Charts</h1>
+      <h2>Charts</h2>
     </div>
   );
 };
