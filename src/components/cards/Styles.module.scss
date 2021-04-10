@@ -6,22 +6,49 @@
 
   div {
     width: 300px;
-    border-radius: 8px;
+    border-radius: 5px;
     padding: 1rem;
   }
 
-  .confirmed_card {
-    background-color: #f7fff7;
-    border-left: 10px solid #ffe66d;
+  .infected_card {
+    position: relative;
+    display: inline-block;
+    background: #f7fff7;
+    border-left: 10px solid #fcca46;
+    background: linear-gradient(to left, #f7fff7 50%, #fcca46 50%) right;
+    background-size: 200%;
+    transition: 0.3s ease-out;
+  }
+
+  .infected_card:hover {
+    background-position: left;
   }
 
   .recovered_card {
-    background-color: #f7fff7;
+    position: relative;
+    display: inline-block;
+    background: #f7fff7;
     border-left: 10px solid #4ecdc4;
+    background: linear-gradient(to left, #f7fff7 50%, #4ecdc4 50%) right;
+    background-size: 200%;
+    transition: 0.3s ease-out;
+  }
+
+  .recovered_card:hover {
+    background-position: left;
   }
 
   .deaths_card {
-    background-color: #f7fff7;
+    position: relative;
+    display: inline-block;
+    background: #f7fff7;
     border-left: 10px solid #ff6b6b;
+    background: linear-gradient(to left, #f7fff7 50%, #ff6b6b 50%) right;
+    background-size: 200%;
+    transition: 0.3s ease-out;
+  }
+
+  .deaths_card:hover {
+    background-position: left;
   }
 }

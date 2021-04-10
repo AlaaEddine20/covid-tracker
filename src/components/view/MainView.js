@@ -32,7 +32,7 @@ const MainView = () => {
       </div>
       <Charts />
       <Cards
-        confirmed={data.confirmed}
+        infected={data.confirmed}
         recovered={data.recovered}
         deaths={data.deaths}
       />

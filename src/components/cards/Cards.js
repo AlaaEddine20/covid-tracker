@@ -1,17 +1,32 @@
 import React from "react";
+// libs
+import CountUp from "react-countup";
+import classnames from "classnames";
+// components
 import Paper from "@material-ui/core/Paper";
-import styles from "./Styles.module.scss";
 import { Typography } from "@material-ui/core";
 
-const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
+import styles from "./Styles.module.scss";
+
+const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
   return (
     <div className={styles.cards_container}>
-      <Paper className={styles.confirmed_card} elevation={3}>
+      <Paper
+        className={classnames(styles.infected_card, styles.animated_inf)}
+        elevation={3}
+      >
         <Typography variant="h5" gutterBottom>
-          Confirmed
+          Infected
         </Typography>
-        {confirmed ? (
-          <p>{confirmed.value.toLocaleString("en")}</p>
+        {infected ? (
+          <Typography variant="p">
+            <CountUp
+              start={0}
+              end={infected.value}
+              duration={2}
+              separator="'"
+            />
+          </Typography>
         ) : (
           <p>Loading...</p>
         )}
@@ -21,7 +36,14 @@ const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
           Recovered
         </Typography>
         {recovered ? (
-          <p>{recovered.value.toLocaleString("en")}</p>
+          <Typography variant="p">
+            <CountUp
+              start={0}
+              end={recovered.value}
+              duration={2}
+              separator="'"
+            />
+          </Typography>
         ) : (
           <p>Loading...</p>
         )}
@@ -31,7 +53,9 @@ const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
           Deaths
         </Typography>
         {deaths ? (
-          <p>{deaths.value.toLocaleString("en")}</p>
+          <Typography variant="p">
+            <CountUp start={0} end={deaths.value} duration={2} separator="'" />
+          </Typography>
         ) : (
           <p>Loading...</p>
         )}
