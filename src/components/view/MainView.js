@@ -15,6 +15,7 @@ const MainView = () => {
     async function dataFetch() {
       const fetchedData = await fetchData();
       setData(fetchedData);
+      console.log(data);
     }
     dataFetch();
   }, []);

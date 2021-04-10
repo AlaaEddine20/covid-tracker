@@ -35,6 +35,7 @@ const CountryPicker = () => {
           onOpen={handleOpen}
           value={country}
           onChange={handleChange}
+          variant="standard"
           inputProps={{
             classes: {
               icon: classes.icon,

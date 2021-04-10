@@ -9,4 +9,19 @@
     border-radius: 8px;
     padding: 1rem;
   }
+
+  .confirmed_card {
+    background-color: #f7fff7;
+    border-left: 10px solid #ffe66d;
+  }
+
+  .recovered_card {
+    background-color: #f7fff7;
+    border-left: 10px solid #4ecdc4;
+  }
+
+  .deaths_card {
+    background-color: #f7fff7;
+    border-left: 10px solid #ff6b6b;
+  }
 }

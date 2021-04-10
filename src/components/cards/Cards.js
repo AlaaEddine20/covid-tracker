@@ -16,7 +16,7 @@ const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
           <p>Loading...</p>
         )}
       </Paper>
-      <Paper className={styles.confirmed_card} elevation={4}>
+      <Paper className={styles.recovered_card} elevation={4}>
         <Typography variant="h5" gutterBottom>
           Recovered
         </Typography>
@@ -26,7 +26,7 @@ const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
           <p>Loading...</p>
         )}
       </Paper>
-      <Paper className={styles.confirmed_card} elevation={4}>
+      <Paper className={styles.deaths_card} elevation={4}>
         <Typography variant="h5" gutterBottom>
           Deaths
         </Typography>
