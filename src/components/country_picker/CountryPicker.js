@@ -27,20 +27,20 @@ const CountryPicker = () => {
 
   return (
     <div className={styles.picker_container}>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">Country</InputLabel>
+      <FormControl style={inputStyle} className={classes.formControl}>
+        <InputLabel style={inputStyle}>Country</InputLabel>
         <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
           value={country}
           onChange={handleChange}
+          inputProps={{
+            classes: {
+              icon: classes.icon,
+            },
+          }}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
@@ -51,15 +51,18 @@ const CountryPicker = () => {
 };
 
 const useStyles = makeStyles((theme) => ({
-  button: {
-    display: "block",
-    marginTop: theme.spacing(2),
-  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 150,
     display: "flex",
   },
+  icon: {
+    fill: "#fefefe",
+  },
 }));
+
+const inputStyle = {
+  color: "#fff",
+};
 
 export default CountryPicker;
