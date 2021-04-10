@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+// functions
 import { fetchData } from "./api/index";
+// components
 import Cards from "./components/cards/Cards";
 import Charts from "./components/charts/Charts";
 import CountryPicker from "./components/country_picker/CountryPicker";
+import Logo from "./components/logo/Logo";
+// styles
 import styles from "./App.module.scss";
 
 function App() {
@@ -18,7 +22,14 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <CountryPicker />
+      <div className={styles.top_view}>
+        <div>
+          <Logo />
+        </div>
+        <div>
+          <CountryPicker />
+        </div>
+      </div>
       <Charts />
       <Cards data={data} />
     </div>
