@@ -12,11 +12,10 @@ const MainView = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    async function dataFetch() {
+    const dataFetch = async () => {
       const fetchedData = await fetchData();
       setData(fetchedData);
-      console.log(data);
-    }
+    };
     dataFetch();
   }, []);
 
@@ -35,6 +34,7 @@ const MainView = () => {
         infected={data.confirmed}
         recovered={data.recovered}
         deaths={data.deaths}
+        lastUpdate={data.lastUpdate}
       />
     </div>
   );

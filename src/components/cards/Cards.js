@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import classnames from "classnames";
 // components
 import { Typography, Grid, Card } from "@material-ui/core";
-
+// styles
 import styles from "./Styles.module.scss";
 
 const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
@@ -19,14 +19,19 @@ const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
           Infected
         </Typography>
         {infected ? (
-          <Typography variant="p">
-            <CountUp
-              start={0}
-              end={infected.value}
-              duration={2}
-              separator="'"
-            />
-          </Typography>
+          <>
+            <Typography variant="h6" gutterBottom>
+              <CountUp
+                start={0}
+                end={infected.value}
+                duration={2}
+                separator="'"
+              />
+            </Typography>
+            <Typography color="secondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
+          </>
         ) : (
           <p>Loading...</p>
         )}
@@ -42,14 +47,19 @@ const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
           Recovered
         </Typography>
         {recovered ? (
-          <Typography variant="p">
-            <CountUp
-              start={0}
-              end={recovered.value}
-              duration={2}
-              separator="'"
-            />
-          </Typography>
+          <>
+            <Typography variant="h6">
+              <CountUp
+                start={0}
+                end={recovered.value}
+                duration={2}
+                separator="'"
+              />
+            </Typography>
+            <Typography color="secondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
+          </>
         ) : (
           <p>Loading...</p>
         )}
@@ -64,9 +74,19 @@ const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
           Deaths
         </Typography>
         {deaths ? (
-          <Typography variant="p">
-            <CountUp start={0} end={deaths.value} duration={2} separator="'" />
-          </Typography>
+          <>
+            <Typography variant="h6">
+              <CountUp
+                start={0}
+                end={deaths.value}
+                duration={2}
+                separator="'"
+              />
+            </Typography>
+            <Typography color="secondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
+          </>
         ) : (
           <p>Loading...</p>
         )}

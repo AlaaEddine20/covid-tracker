@@ -5,6 +5,9 @@ export const theme = createMuiTheme({
     primary: {
       main: "#fff",
     },
+    secondary: {
+      main: "#555",
+    },
   },
   overrides: {
     MuiInput: {
