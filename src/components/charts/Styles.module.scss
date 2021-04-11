@@ -1,8 +1,21 @@
 .charts_container {
   background-color: #f7fff7;
   border-radius: 5px;
-  flex: 3;
+  // flex: 1;
   width: 80%;
+  min-height: 320px;
   margin: 20px 0;
   padding: 1rem;
+}
+
+@media only screen and(max-width: 1200px) {
+  .charts_container {
+    width: 800px;
+  }
+}
+
+@media only screen and(max-width: 800px) {
+  .charts_container {
+    width: 500px;
+  }
 }

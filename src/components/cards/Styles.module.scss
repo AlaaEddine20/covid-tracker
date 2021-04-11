@@ -1,12 +1,13 @@
 .cards_container {
   display: flex;
   justify-content: space-between;
-  flex: 1;
   width: 80%;
 
-  div {
-    width: 300px;
-    border-radius: 5px;
+  .card {
+    width: 280px;
+    height: 220px;
+
+    // border-radius: 5px;
     padding: 1rem;
   }
 
@@ -18,6 +19,7 @@
     background: linear-gradient(to left, #f7fff7 50%, #fcca46 50%) right;
     background-size: 200%;
     transition: 0.3s ease-out;
+    margin-right: 5px;
   }
 
   .infected_card:hover {
@@ -32,6 +34,7 @@
     background: linear-gradient(to left, #f7fff7 50%, #4ecdc4 50%) right;
     background-size: 200%;
     transition: 0.3s ease-out;
+    margin-right: 10px;
   }
 
   .recovered_card:hover {
@@ -50,5 +53,26 @@
 
   .deaths_card:hover {
     background-position: left;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .card {
+      margin: 10px 0;
+      width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .cards_container {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cards_container {
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
   }
 }

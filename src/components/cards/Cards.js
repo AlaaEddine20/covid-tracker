@@ -3,17 +3,17 @@ import React from "react";
 import CountUp from "react-countup";
 import classnames from "classnames";
 // components
-import Paper from "@material-ui/core/Paper";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid, Card } from "@material-ui/core";
 
 import styles from "./Styles.module.scss";
 
 const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
   return (
     <div className={styles.cards_container}>
-      <Paper
-        className={classnames(styles.infected_card, styles.animated_inf)}
-        elevation={3}
+      <Grid
+        item
+        component={Card}
+        className={classnames(styles.infected_card, styles.card)}
       >
         <Typography variant="h5" gutterBottom>
           Infected
@@ -30,8 +30,14 @@ const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
         ) : (
           <p>Loading...</p>
         )}
-      </Paper>
-      <Paper className={styles.recovered_card} elevation={4}>
+      </Grid>
+
+      <Grid
+        item
+        component={Card}
+        className={classnames(styles.recovered_card, styles.card)}
+        elevation={4}
+      >
         <Typography variant="h5" gutterBottom>
           Recovered
         </Typography>
@@ -47,8 +53,13 @@ const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
         ) : (
           <p>Loading...</p>
         )}
-      </Paper>
-      <Paper className={styles.deaths_card} elevation={4}>
+      </Grid>
+
+      <Grid
+        item
+        component={Card}
+        className={classnames(styles.deaths_card, styles.card)}
+      >
         <Typography variant="h5" gutterBottom>
           Deaths
         </Typography>
@@ -59,7 +70,7 @@ const Cards = ({ infected, recovered, deaths, lastUpdate }) => {
         ) : (
           <p>Loading...</p>
         )}
-      </Paper>
+      </Grid>
     </div>
   );
 };
