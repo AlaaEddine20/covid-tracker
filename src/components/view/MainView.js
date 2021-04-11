@@ -6,18 +6,20 @@ import Cards from "../cards/Cards";
 import Charts from "../charts/Charts";
 import CountryPicker from "../country_picker/CountryPicker";
 import Logo from "../logo/Logo";
+// styles
 import styles from "./Styles.module.scss";
 
 const MainView = () => {
   const [data, setData] = useState({});
 
+  const dataFetch = async () => {
+    const fetchedData = await fetchData();
+    setData(fetchedData);
+  };
+
   useEffect(() => {
-    const dataFetch = async () => {
-      const fetchedData = await fetchData();
-      setData(fetchedData);
-    };
     dataFetch();
-  }, []);
+  }, [setData]);
 
   return (
     <div className={styles.container}>
