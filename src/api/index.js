@@ -26,6 +26,7 @@ export const fetchDailyData = async () => {
     return data.map(({ confirmed, deaths, reportDate: date }) => ({
       confimed: confirmed.total,
       deaths: deaths.totaldate,
+      date,
     }));
   } catch (error) {
     console.log(error);

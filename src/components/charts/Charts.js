@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 // fetchAPI
 import { fetchDailyData } from "../../api/index";
-// chart components/elements
-import { Line, Bar } from "react-chartjs-2";
+// components
+import LineChart from "./LineChart.js";
 // styles
 import styles from "./Styles.module.scss";
 
 const Charts = () => {
   const [dailyData, setDailyData] = useState({});
 
+  useEffect(() => {
+    dataFetch();
+  }, []);
+
   const dataFetch = async () => {
     const fetchedData = await fetchDailyData();
     setDailyData(fetchedData);
   };
 
-  useEffect(() => {
-    dataFetch();
-    console.log("daily data useEffect", dailyData);
-  }, []);
-
   return (
     <div className={styles.charts_container}>
-      <h2>Charts</h2>
+      {dailyData[0] ? <LineChart dailyData={dailyData} /> : null}
     </div>
   );
 };

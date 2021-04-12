@@ -1,11 +1,11 @@
 .cards_container {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 1200px;
 
   .card {
     width: 280px;
-    height: 220px;
+    height: 200px;
 
     // border-radius: 5px;
     padding: 1rem;
@@ -18,7 +18,7 @@
     border-left: 10px solid #fcca46;
     background: linear-gradient(to left, #f7fff7 50%, #fcca46 50%) right;
     background-size: 200%;
-    transition: 0.3s ease-out;
+    transition: 0.2s ease-out;
     margin-right: 10px;
   }
 
@@ -33,7 +33,7 @@
     border-left: 10px solid #4ecdc4;
     background: linear-gradient(to left, #f7fff7 50%, #4ecdc4 50%) right;
     background-size: 200%;
-    transition: 0.3s ease-out;
+    transition: 0.2s ease-out;
     margin-right: 10px;
   }
 
@@ -48,7 +48,7 @@
     border-left: 10px solid #ff6b6b;
     background: linear-gradient(to left, #f7fff7 50%, #ff6b6b 50%) right;
     background-size: 200%;
-    transition: 0.3s ease-out;
+    transition: 0.2s ease-out;
   }
 
   .deaths_card:hover {
@@ -69,7 +69,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .cards_container {
     width: 500px;
     flex-direction: column;
