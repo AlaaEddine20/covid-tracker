@@ -8,7 +8,7 @@ import styles from "./Styles.module.scss";
 
 const Charts = () => {
   const [dailyData, setDailyData] = useState({});
-
+  console.log(dailyData);
   useEffect(() => {
     dataFetch();
   }, []);
